@@ -12,7 +12,7 @@ class Review(Base):
     comment = Column(Text, nullable=False)
     review_date = Column(Date, nullable=False)
 
-    # Добавляем свойства sneaker и customer для связи с моделями Sneaker и Customer
+    # РґРѕР±Р°РІР»СЏРµРј СЃРІРѕР№СЃС‚РІР° sneaker Рё customer РґР»СЏ СЃРІСЏР·Рё СЃ РјРѕРґРµР»СЏРјРё Sneaker Рё Customer
     sneaker = relationship("Sneaker", back_populates="reviews")
     customer = relationship("Customer", back_populates="reviews")
 
