@@ -12,7 +12,7 @@ class Order(Base):
     quantity = Column(Integer, nullable=False)
     total_price = Column(Float, nullable=False)
 
-    # Добавляем свойства customer и sneaker для связи с моделями Customer и Sneaker
+    # РґРѕР±Р°РІР»СЏРµРј СЃРІРѕР№СЃС‚РІР° customer Рё sneaker РґР»В¤ СЃРІВ¤Р·Рё СЃ РјРѕРґРµР»СЏРјРё Customer Рё Sneaker
     customer = relationship("Customer", back_populates="orders")
     sneaker = relationship("Sneaker", back_populates="orders")
 
@@ -22,3 +22,4 @@ class Order(Base):
         self.order_date = order_date
         self.quantity = quantity
         self.total_price = total_price
+
