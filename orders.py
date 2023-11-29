@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, Date, ForeignKey, Float
 from sqlalchemy.orm import relationship
-from comp.base import Base
+from tables.base import Base
 
 class Order(Base):
     __tablename__ = 'orders'
@@ -12,7 +12,7 @@ class Order(Base):
     quantity = Column(Integer, nullable=False)
     total_price = Column(Float, nullable=False)
 
-    # Добавляем свойства customer и sneaker для связи с моделями Customer и Sneaker
+     # РґРѕР±Р°РІР»СЏРµРј СЃРІРѕР№СЃС‚РІР° customer Рё sneaker РґР»СЏ СЃРІСЏР·Рё СЃ РјРѕРґРµР»СЏРјРё Customer Рё Sneaker
     customer = relationship("Customer", back_populates="orders")
     sneaker = relationship("Sneaker", back_populates="orders")
 
