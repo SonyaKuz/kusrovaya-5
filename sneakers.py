@@ -1,5 +1,6 @@
+from sqlalchemy.orm import relationship
 from sqlalchemy import Column, Integer, String
-from comp.base import Base
+from tables.base import Base
 
 class Sneaker(Base):
     __tablename__ = 'sneakers'
@@ -10,7 +11,7 @@ class Sneaker(Base):
     size = Column(Integer, nullable=False)
     color = Column(String, nullable=False)
     price = Column(String, nullable=False)
-
+    orders = relationship("Order", back_populates="sneaker")
     def __init__(self, brand: str, model: str, size: int, color: str, price: str):
         self.brand = brand
         self.model = model
